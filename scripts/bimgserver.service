@@ -1,0 +1,14 @@
+[Unit]
+
+Description=Bingserver 图像处理服务
+After=network.target
+Wants=network-online.target
+[Service]
+
+Restart=always
+Type=simple
+ExecStart=/root/bimgserver/bimgserver-amd64
+Environment='TEST=test'
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+package cskyzn.com.bimgserver;
+option go_package = "cskyzn.com/pkg/bimgserver/rpc";
+
+
+
+service BimgServer {
+    rpc Thumbnail(ThumbnailReq) returns (ContentResp);
+}
+
+message ThumbnailReq {
+    int32 pixels = 1;
+    bytes content = 2;
+}
+
+message ContentResp {
+    bytes content = 1;
+}
